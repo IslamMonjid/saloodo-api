@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "350fe6f9-42e1-4c97-a3b4-46b3bc41884c",
+		"name": "Saloodo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4746279"
+	},
+	"item": [
+		{
+			"name": "Sender Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "dana.streich@example.org",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/sender/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"sender",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sender Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9zZW5kZXIvbG9naW4iLCJpYXQiOjE2NzUwMzM2NDAsImV4cCI6MTY3NTAzNzI0MCwibmJmIjoxNjc1MDMzNjQwLCJqdGkiOiJWMmZ0THY2c1VVQ1BmeXVaIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yf9o6WXrQj2wTO3awuYZorKCgH-9L8RCNTcHY1i5XTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/sender/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"sender",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Biker Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mills.chanelle@example.net",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/biker/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"biker",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Biker Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9iaWtlci9sb2dpbiIsImlhdCI6MTY3NTAzMzg3NywiZXhwIjoxNjc1MDM3NDc3LCJuYmYiOjE2NzUwMzM4NzcsImp0aSI6IlZaTzZMNloyOFUzeUt0RnYiLCJzdWIiOiIxIiwicHJ2IjoiMThiMTBhOWZhYzAzYjM3Nzk2ODMwOTEyN2M2YWY1NzkxMGVmMTg1MyJ9.IM8qpDTPX23jWT4ATg92i7db1RUuFBjdN_8_f4knhTs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/biker/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"biker",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Parcel Status For Sender",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9zZW5kZXIvbG9naW4iLCJpYXQiOjE2NzUwMzM5NzIsImV4cCI6MTY3NTAzNzU3MiwibmJmIjoxNjc1MDMzOTcyLCJqdGkiOiJNWTRrQUUxYzR4eVB4a1g2Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fyj2t5KKcavfFGMOGhhwANnPQJxsmrvACzVl2ZSOs7o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/parcel/get-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"get-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Parcel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9zZW5kZXIvbG9naW4iLCJpYXQiOjE2NzUwMzM5NzIsImV4cCI6MTY3NTAzNzU3MiwibmJmIjoxNjc1MDMzOTcyLCJqdGkiOiJNWTRrQUUxYzR4eVB4a1g2Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.fyj2t5KKcavfFGMOGhhwANnPQJxsmrvACzVl2ZSOs7o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pick_up_address",
+							"value": "test pick up address",
+							"type": "text"
+						},
+						{
+							"key": "drop_off_address",
+							"value": "test drop off address",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/parcel/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Parcels List For Bikers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9iaWtlci9sb2dpbiIsImlhdCI6MTY3NTAzNDIzNiwiZXhwIjoxNjc1MDM3ODM2LCJuYmYiOjE2NzUwMzQyMzYsImp0aSI6IldtOFNMMEkwYmJPZHVQQk0iLCJzdWIiOiIxIiwicHJ2IjoiMThiMTBhOWZhYzAzYjM3Nzk2ODMwOTEyN2M2YWY1NzkxMGVmMTg1MyJ9.GdBmE4tV9q3Z0F2lLOnDA_4cNxcp60zD9h4M2jbHqg4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/parcel/get-parcels-list-for-bikers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"get-parcels-list-for-bikers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Biker Parcels",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9iaWtlci9sb2dpbiIsImlhdCI6MTY3NTAzNDIzNiwiZXhwIjoxNjc1MDM3ODM2LCJuYmYiOjE2NzUwMzQyMzYsImp0aSI6IldtOFNMMEkwYmJPZHVQQk0iLCJzdWIiOiIxIiwicHJ2IjoiMThiMTBhOWZhYzAzYjM3Nzk2ODMwOTEyN2M2YWY1NzkxMGVmMTg1MyJ9.GdBmE4tV9q3Z0F2lLOnDA_4cNxcp60zD9h4M2jbHqg4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/parcel/get-biker-parcels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"get-biker-parcels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pick Up Parcel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9iaWtlci9sb2dpbiIsImlhdCI6MTY3NTAzNDIzNiwiZXhwIjoxNjc1MDM3ODM2LCJuYmYiOjE2NzUwMzQyMzYsImp0aSI6IldtOFNMMEkwYmJPZHVQQk0iLCJzdWIiOiIxIiwicHJ2IjoiMThiMTBhOWZhYzAzYjM3Nzk2ODMwOTEyN2M2YWY1NzkxMGVmMTg1MyJ9.GdBmE4tV9q3Z0F2lLOnDA_4cNxcp60zD9h4M2jbHqg4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/parcel/pick-up-parcel/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"pick-up-parcel",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drop Off Parcel",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9iaWtlci9sb2dpbiIsImlhdCI6MTY3NTAzNDIzNiwiZXhwIjoxNjc1MDM3ODM2LCJuYmYiOjE2NzUwMzQyMzYsImp0aSI6IldtOFNMMEkwYmJPZHVQQk0iLCJzdWIiOiIxIiwicHJ2IjoiMThiMTBhOWZhYzAzYjM3Nzk2ODMwOTEyN2M2YWY1NzkxMGVmMTg1MyJ9.GdBmE4tV9q3Z0F2lLOnDA_4cNxcp60zD9h4M2jbHqg4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/parcel/drop-off-parcel/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"parcel",
+						"drop-off-parcel",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
