@@ -30,6 +30,7 @@ Route::controller(BikerAuthController::class)->group(function () {
 
 Route::controller(ParcelController::class)->group(function () {
     Route::get('parcel/get-status', 'getParcelsStatus');
+    Route::get('parcel/get-parcels-list-for-bikers', 'getParcelsListForBiker');
     Route::post('parcel/create', 'create');
 });
 

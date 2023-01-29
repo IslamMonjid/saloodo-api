@@ -14,7 +14,8 @@ class ParcelController extends Controller
     public function __construct(ParcelServiceInterface $ParcelService)
     {
         $this->ParcelService = $ParcelService;
-        $this->middleware('auth:sender', ['except' => []]);
+        $this->middleware('auth:sender', [ 'only' => ['create' , 'getParcelsStatus']]);
+        $this->middleware('auth:biker', [ 'only' => ['getParcelsListForBiker']]);
     }
 
     public function create(Request $request)
@@ -43,5 +44,14 @@ class ParcelController extends Controller
             'status' => 'success',
             'parcel-status' => $status
         ], 200);
+    }
+
+    public function getParcelsListForBiker(){
+        $parcels = $this->ParcelService->getParcelsListForBiker();
+
+        return response()->json([
+            'status' => 'success',
+            'parcel' => $parcels
+        ], 201);
     }
 }

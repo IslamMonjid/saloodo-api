@@ -21,4 +21,8 @@ class ParcelService implements ParcelServiceInterface
     public function getParcelsStatus($sender){
         return $this->parcelRepository->getParcelsStatus($sender);
     }
+
+    public function getParcelsListForBiker(){
+        return $this->parcelRepository->getParcelsListForBiker();
+    }
 }
