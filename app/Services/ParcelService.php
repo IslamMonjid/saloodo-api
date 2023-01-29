@@ -17,4 +17,8 @@ class ParcelService implements ParcelServiceInterface
     public function create($pick_up_address, $drop_off_address, $sender){
         return $this->parcelRepository->create($pick_up_address, $drop_off_address, $sender);
     }
+
+    public function getParcelStatus($id, $sender){
+        return $this->parcelRepository->getParcelStatus($id, $sender);
+    }
 }

@@ -28,15 +28,20 @@ class ParcelController extends Controller
         $drop_off_address = $request->drop_off_address;
         $sender = Auth::user()->id;
         $parcel = $this->ParcelService->create($pick_up_address, $drop_off_address, $sender);
-        if ($parcel) {
-            return response()->json([
-                'status' => 'success',
-                'parcel' => $parcel
-            ], 201);
-        } else {
-            return response()->json([
-                'status' => 'error'
-            ], 500);
-        }
+
+        return response()->json([
+            'status' => 'success',
+            'parcel' => $parcel
+        ], 201);
+    }
+
+    public function getParcelStatus($id){
+
+        $sender = Auth::user()->id;
+        $status = $this->ParcelService->getParcelStatus($id, $sender);
+        return response()->json([
+            'status' => 'success',
+            'parcel-status' => $status
+        ], 200);
     }
 }

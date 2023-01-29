@@ -14,18 +14,16 @@ class ParcelRepository implements ParcelRepositoryInterface
     protected $model;
 
     /**
-     * CustomerRepository constructor.
+     * PArcelRepository constructor.
      *
-     * @param Customer $model
+     * @param Parcel $model
      */
     public function __construct(Parcel $model)
     {
         $this->model = $model;
     }
 
-    /**
-     * @return Collection
-     */
+    
     public function create($pick_up_address, $drop_off_address, $sender)
     {
         $parcel = Parcel::create(
@@ -37,5 +35,10 @@ class ParcelRepository implements ParcelRepositoryInterface
         );
 
         return $parcel;
+    }
+
+    public function getParcelStatus($id, $sender){
+        $status = Parcel::with('status')->where(['id' => $id, 'user_id' => $sender])->get();
+        return $status;
     }
 }
