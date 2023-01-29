@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'sender',
         'passwords' => 'users',
     ],
 
@@ -41,9 +41,14 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
+        'sender' => [
             'driver' => 'jwt',
             'provider' => 'users',
+        ],
+
+        'biker' => [
+            'driver' => 'jwt',
+            'provider' => 'bikers',
         ]
     ],
 
@@ -70,10 +75,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'bikers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Biker::class,
+        ],
     ],
 
     /*
