@@ -14,8 +14,8 @@ class ParcelController extends Controller
     public function __construct(ParcelServiceInterface $ParcelService)
     {
         $this->ParcelService = $ParcelService;
-        $this->middleware('auth:sender', [ 'only' => ['create' , 'getParcelsStatus']]);
-        $this->middleware('auth:biker', [ 'only' => ['getParcelsListForBiker']]);
+        $this->middleware('auth:sender', ['only' => ['create', 'getParcelsStatus']]);
+        $this->middleware('auth:biker', ['only' => ['getParcelsListForBiker', 'pick_up_parcel']]);
     }
 
     public function create(Request $request)
@@ -36,7 +36,8 @@ class ParcelController extends Controller
         ], 201);
     }
 
-    public function getParcelsStatus(){
+    public function getParcelsStatus()
+    {
 
         $sender = Auth::user()->id;
         $status = $this->ParcelService->getParcelsStatus($sender);
@@ -46,12 +47,29 @@ class ParcelController extends Controller
         ], 200);
     }
 
-    public function getParcelsListForBiker(){
+    public function getParcelsListForBiker()
+    {
         $parcels = $this->ParcelService->getParcelsListForBiker();
 
         return response()->json([
             'status' => 'success',
             'parcel' => $parcels
-        ], 201);
+        ], 200);
+    }
+
+    public function pick_up_parcel($id)
+    {
+        $biker = Auth::guard('biker')->user()->id;
+        $status = $this->ParcelService->pick_up_parcel($id, $biker);
+
+        if ($status) {
+            return response()->json([
+                'status' => 'success'
+            ], 200);
+        } else {
+            return response()->json([
+                'error' => 'Parcel already picked up'
+            ], 400);
+        }
     }
 }

@@ -46,4 +46,15 @@ class ParcelRepository implements ParcelRepositoryInterface
         $parcels = Parcel::whereNull('biker_id')->get();
         return $parcels;
     }
+
+    public function pick_up_parcel($parcel, $biker){
+        $parcel = Parcel::find($parcel);
+        if(isset($parcel->biker_id)){
+            $status = 0; 
+        }else{
+            $status = $parcel->update(['biker_id' => $biker, 'pick_up_at' => now()]);
+        }
+        
+        return $status;
+    }
 }
