@@ -4,7 +4,6 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Parcel;
 use App\Repositories\Interfaces\ParcelRepositoryInterface;
-use Illuminate\Support\Collection;
 
 class ParcelRepository implements ParcelRepositoryInterface
 {
