@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SenderAuthController;
 use App\Http\Controllers\BikerAuthController;
-
+use App\Http\Controllers\ParcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +26,9 @@ Route::controller(SenderAuthController::class)->group(function () {
 Route::controller(BikerAuthController::class)->group(function () {
     Route::post('biker/login', 'login');
     Route::post('biker/logout', 'logout');
+});
+
+Route::controller(ParcelController::class)->group(function () {
+    Route::post('parcel/create', 'create');
 });
 

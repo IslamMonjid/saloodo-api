@@ -31,4 +31,9 @@ class Biker extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function parcels()
+    {
+        return $this->hasMany(Parcel::class);
+    }
 }

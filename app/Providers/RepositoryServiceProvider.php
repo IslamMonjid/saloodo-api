@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Providers;
-
-
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\Interfaces\ParcelRepositoryInterface;
+use App\Repositories\Eloquent\ParcelRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -14,7 +14,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->app->bind(ParcelRepositoryInterface::class, ParcelRepository::class);
     }
 
 }
