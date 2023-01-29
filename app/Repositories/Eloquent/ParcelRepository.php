@@ -52,7 +52,7 @@ class ParcelRepository implements ParcelRepositoryInterface
         if(isset($parcel->biker_id)){
             $status = 0; 
         }else{
-            $status = $parcel->update(['biker_id' => $biker, 'pick_up_at' => now()]);
+            $status = $parcel->update(['biker_id' => $biker, 'pick_up_at' => now(), 'status' => 3]);
         }
         
         return $status;
