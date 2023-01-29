@@ -37,8 +37,8 @@ class ParcelRepository implements ParcelRepositoryInterface
         return $parcel;
     }
 
-    public function getParcelStatus($id, $sender){
-        $status = Parcel::with('status')->where(['id' => $id, 'user_id' => $sender])->get();
+    public function getParcelsStatus($sender){
+        $status = Parcel::with('status')->where(['user_id' => $sender])->get();
         return $status;
     }
 }

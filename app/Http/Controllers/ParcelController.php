@@ -35,10 +35,10 @@ class ParcelController extends Controller
         ], 201);
     }
 
-    public function getParcelStatus($id){
+    public function getParcelsStatus(){
 
         $sender = Auth::user()->id;
-        $status = $this->ParcelService->getParcelStatus($id, $sender);
+        $status = $this->ParcelService->getParcelsStatus($sender);
         return response()->json([
             'status' => 'success',
             'parcel-status' => $status

@@ -29,7 +29,7 @@ Route::controller(BikerAuthController::class)->group(function () {
 });
 
 Route::controller(ParcelController::class)->group(function () {
-    Route::get('parcel/get-status/{id}', 'getParcelStatus');
+    Route::get('parcel/get-status', 'getParcelsStatus');
     Route::post('parcel/create', 'create');
 });
 
