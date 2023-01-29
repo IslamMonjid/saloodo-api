@@ -33,4 +33,8 @@ class ParcelService implements ParcelServiceInterface
     public function getBikerParcels($biker){
         return $this->parcelRepository->getBikerParcels($biker);
     }
+
+    public function drop_off_parcel($parcel, $biker){
+        return $this->parcelRepository->drop_off_parcel($parcel, $biker);
+    }
 }

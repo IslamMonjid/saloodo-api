@@ -52,7 +52,7 @@ class ParcelRepository implements ParcelRepositoryInterface
         if(isset($parcel->biker_id)){
             $status = 0; 
         }else{
-            $status = $parcel->update(['biker_id' => $biker, 'pick_up_at' => now(), 'status' => 3]);
+            $status = $parcel->update(['biker_id' => $biker, 'pick_up_at' => now(), 'status_id' => 3]);
         }
         
         return $status;
@@ -61,5 +61,14 @@ class ParcelRepository implements ParcelRepositoryInterface
     public function getBikerParcels($biker){
         $parcels = Parcel::where('biker_id', $biker)->get();
         return $parcels;
+    }
+
+    public function drop_off_parcel($parcel, $biker){
+        $parcel = Parcel::where(['id' => $parcel, 'biker_id' => $biker])->first();
+        $status = 0;
+        if($parcel){
+            $status = $parcel->update(['drop_off_at' => now(), 'status_id' => 4]);
+        }
+        return $status;
     }
 }

@@ -33,6 +33,7 @@ Route::controller(ParcelController::class)->group(function () {
     Route::get('parcel/get-parcels-list-for-bikers', 'getParcelsListForBiker');
     Route::get('parcel/get-biker-parcels', 'getBikerParcels');
     Route::get('parcel/pick-up-parcel/{id}', 'pick_up_parcel');
+    Route::get('parcel/drop-off-parcel/{id}', 'drop_off_parcel');
     Route::post('parcel/create', 'create');
 });
 

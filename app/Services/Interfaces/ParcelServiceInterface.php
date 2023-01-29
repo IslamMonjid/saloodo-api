@@ -8,4 +8,5 @@ interface ParcelServiceInterface
    public function getParcelsListForBiker();
    public function pick_up_parcel($parcel, $biker);
    public function getBikerParcels($biker);
+   public function drop_off_parcel($parcel, $biker);
 }
