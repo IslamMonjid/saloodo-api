@@ -10,4 +10,5 @@ interface ParcelRepositoryInterface
    public function getParcelsStatus($sender);
    public function getParcelsListForBiker();
    public function pick_up_parcel($parcel, $biker);
+   public function getBikerParcels($biker);
 }

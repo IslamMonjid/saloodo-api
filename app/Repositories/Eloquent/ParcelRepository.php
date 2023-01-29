@@ -57,4 +57,9 @@ class ParcelRepository implements ParcelRepositoryInterface
         
         return $status;
     }
+
+    public function getBikerParcels($biker){
+        $parcels = Parcel::where('biker_id', $biker)->get();
+        return $parcels;
+    }
 }
